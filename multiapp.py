@@ -46,7 +46,7 @@ class MultiApp:
                     Hi there! This is your navigation pane.
                 </p>
                 <p>
-                    Please click on the respective buttons to the different dashboards.
+                    Please click on the respective buttons to access the different dashboards.
                 </p>
         '''
         st.sidebar.markdown(sidebar_desc, unsafe_allow_html = True)

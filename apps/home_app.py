@@ -8,8 +8,7 @@ def app():
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         <h1>SNIPS AVENUE ANALYTICS DASHBOARD</h1> 
         <h2>About</h2>
-        <p>This solution is supposed to work in tandem with the newly launched Snip Avenue application.</p>
-        <p>Data is requested from our servers and displayed here. The goal of this dashboard is to inculcate a data-driven culture in the organisation, providing 
+        <p>This solution is works in tandem with the newly launched Snip Avenue application. Data is requested from our servers and displayed here. The goal of this dashboard is to inculcate a data-driven culture in the organisation, providing 
         key stakeholders with live information to drive decisions.</p>
     '''
     st.markdown(home_overview, unsafe_allow_html=True)

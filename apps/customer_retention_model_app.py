@@ -16,14 +16,14 @@ def app():
 
     st.header('Input Features')
     wait_time = st.slider(
-        label='Wait Time',
+        label='Wait Time (mins)',
         min_value=float(df['wait_time'].min()),
         max_value=float(df['wait_time'].max()),
         value=round(float(df['wait_time'].min()), 1),
         step=0.1)
 
     process_duration = st.slider(
-        label='Process Duration',
+        label='Process Duration (mins)',
         min_value=5.0,
         max_value=round(float(df['process_duration'].max()), 1),
         value=5.0,
@@ -44,7 +44,7 @@ def app():
         step=1)
 
     price_paid = st.slider(
-        label='Price Paid',
+        label='Price Paid ($)',
         min_value=float(df['price_paid'].min()),
         max_value=float(df['price_paid'].max()),
         value=float(df['price_paid'].min()),

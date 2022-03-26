@@ -14,14 +14,14 @@ from components import common, bar, line
 def app():
     service_intro = '''
         <h1>Service Dashboard</h1>
-        <p>Service duration is the main metric which we will be comparing against in this dashboard. Service duration is an important factor to consider when evaluating service-based businesses. On its own, it gives us a gauge on how efficiently our company is performing. When it is compared against industry standards, it allows us to determine if our company is effectively meeting our target audience's requirements.
+        <p style="text-align: justify">Service duration is the main metric which we will be comparing against in this dashboard. Service duration is an important factor to consider when evaluating service-based businesses. On its own, it gives us a gauge on how efficiently Snip Avenue is performing. When compared against industry standards, it allows us to determine if Snip Avenue is effectively meeting our target audience's requirements.
         </p>
     '''
     st.markdown(service_intro, unsafe_allow_html = True)
 
     service_slider = '''
         <h2>Service Interval Slider</h2>
-        <p>The service interval slider configures the service duration into bins globally. This helps you compare different metrics that go alongside Snip Avenue's service duration.
+        <p style="text-align: justify">The service interval slider configures the service duration into bins globally. This helps you compare different metrics that go alongside Snip Avenue's service duration.
         <p>
     ''' 
     st.markdown(service_slider, unsafe_allow_html = True)
@@ -33,21 +33,21 @@ def app():
 
     service_histogram = '''
         <h2>Service Duration Histogram</h2>
-        <p>Through the histogram, we can observe and make desicions and service optimisations based on the distributions of our service durations.</p>
+        <p style="text-align: justify">Through the histogram, we can observe and make decisions; i.e. service optimisation based on the distributions of our service durations.</p>
     ''' 
     st.markdown(service_histogram, unsafe_allow_html = True)
     st.write(bar.get_bar(service_df['service_time_bins'], service_df['count'], 'Service Duration (in mins)', 'Quantity (customers)'))
 
     service_rating = '''
         <h2>Average Ratings</h2>
-        <p>Within the same bins, we can compare the average ratings to help us determine consumer behaviour with respect to service durations.</p>
+        <p style="text-align: justify">Within the same bins, we can compare the average ratings to help us determine consumer behaviour with respect to service durations.</p>
     ''' 
     st.markdown(service_rating, unsafe_allow_html = True)
     st.write(line.get_line(service_df['service_time_bins'], service_df['average_rating'], 'Service Duration (in mins)', 'Average Service Rating'))
     
     service_price = '''
         <h2>Average Price Paid</h2>
-        <p>Finally, we can also compare also compare the different service durations against prices paid to determine if our service is resource efficient.</p>
+        <p style="text-align: justify">Finally, we can also compare the different service durations against prices paid to determine if our service is resource efficient.</p>
     ''' 
     st.markdown(service_price, unsafe_allow_html = True)
     st.write(line.get_line(service_df['service_time_bins'], service_df['average_price'], 'Service Duration (in mins)', 'Average Price Paid'))

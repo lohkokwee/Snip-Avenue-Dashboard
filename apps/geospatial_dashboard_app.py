@@ -18,7 +18,7 @@ from components import common, maps
 def app():
     geo_intro = '''
         <h1>Geospatial Dashboard</h1>
-        <p>Coupled with data, heatmaps provides us with a concise birds eye view of any potential problems early at our various Snip Avenue outlets. Depending on the metric you selected, you would be able to view the "severities" of the different metrics at our shops in Singapore.
+        <p style="text-align: justify">Heatmaps provide us with a concise bird's eye view of our various Snip Avenue outlets, and can help with making data-driven decisions to better serve customers. Depending on the metric you selected, you would be able to view the "severities" of the different metrics at our shops in Singapore.
         </p>
     '''
     st.markdown(geo_intro, unsafe_allow_html = True)

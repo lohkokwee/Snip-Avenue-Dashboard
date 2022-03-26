@@ -53,4 +53,5 @@ def app():
     user_variables = [wait_time, process_duration, queue_length, rating, price_paid]
 
     if st.button("Predict"):
-        st.write(common.get_prediction(user_variables))
+        prediction = common.get_prediction(user_variables)
+        st.write(prediction)

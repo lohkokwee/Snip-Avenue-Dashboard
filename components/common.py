@@ -1,5 +1,8 @@
 import math
 import pandas as pd
+import numpy as np
+import pickle
+from pathlib import Path
 
 def get_bins(df, col, interval):
     col_max = math.ceil(df[col].max())
@@ -14,3 +17,13 @@ def get_col_dict(cols):
     col_dict = {f"Average {' '.join(list(map(lambda x: x.capitalize(), col.split('_'))))}" : f"average_{col}" for col in cols}
 
     return col_dict
+
+
+def get_prediction(variables):
+    
+    pickle_in = open('./logreg.pkl', 'rb')
+    model = pickle.load(pickle_in)
+
+    x_test = pd.DataFrame(np.array([variables]), columns = ['wait_time', 'process_duration', 'queue_length', 'rating', 'price_paid'])
+    prediction = model.predict(x_test)
+    return prediction

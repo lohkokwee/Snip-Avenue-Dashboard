@@ -51,8 +51,17 @@ def app():
         step=0.1)
 
     user_variables = [wait_time, process_duration, queue_length, rating, price_paid]
+    variable_names = ["Wait Time", "Process Duration", "Queue Length", "Rating", "Price Paid"]
 
     if st.button("Predict"):
-        prediction = common.get_prediction(user_variables)
+        prediction = common.get_prediction(user_variables)[0]
+        confidence = common.get_prediction(user_variables)[1]
+        percentile_list = common.get_percentile(user_variables, df)
+
+        st.write("The variables that you have chosen are:")
         
-        st.write("Customer will return to Snip Avenue! (:" if prediction == 1 else "Customer will not return ):")
+        for i in range(len(user_variables)):
+            st.write(variable_names[i],": ", user_variables[i], ", ", str(round(percentile_list[i], 2))+" percentile")
+        
+        st.write("Congratulations! The customer will return to Snip Avenue! (:" if prediction == 1 else "Unfortunately, the customer will not return ):")
+        st.write("Confidence level:", round(confidence, 2))

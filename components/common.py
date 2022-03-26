@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from pathlib import Path
+from scipy.stats import percentileofscore
 
 def get_bins(df, col, interval):
     col_max = math.ceil(df[col].max())
@@ -25,6 +26,19 @@ def get_prediction(variables):
     
     pickle_in = open(HERE / 'logreg.sav', 'rb')
     model = pickle.load(pickle_in)
-    x_test = pd.DataFrame(np.array([variables]), columns = ['wait_time', 'process_duration', 'queue_length', 'rating', 'price_paid'])
+    x_test = pd.DataFrame(np.array([variables]))
     prediction = model.predict(x_test)
-    return prediction[0]
+    confidence = model.predict_proba(x_test)
+
+    return int(prediction[0]), list(confidence[0])[int(prediction[0])]
+
+def get_percentile(variables, df):
+    variable_names = ['wait_time', 'process_duration', 'queue_length', 'rating', 'price_paid']
+    percentile_list = []
+
+    for i in range(len(variable_names)):
+        dataset = df[variable_names[i]]
+        percentile = percentileofscore(dataset, variables[i])
+        percentile_list.append(percentile)
+
+    return percentile_list

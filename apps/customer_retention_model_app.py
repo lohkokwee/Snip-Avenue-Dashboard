@@ -54,4 +54,5 @@ def app():
 
     if st.button("Predict"):
         prediction = common.get_prediction(user_variables)
-        st.write(prediction)
+        
+        st.write("Customer will return to Snip Avenue! (:" if prediction == 1 else "Customer will not return ):")

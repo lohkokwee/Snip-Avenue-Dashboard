@@ -27,4 +27,4 @@ def get_prediction(variables):
     model = pickle.load(pickle_in)
     x_test = pd.DataFrame(np.array([variables]), columns = ['wait_time', 'process_duration', 'queue_length', 'rating', 'price_paid'])
     prediction = model.predict(x_test)
-    return prediction
+    return prediction[0]

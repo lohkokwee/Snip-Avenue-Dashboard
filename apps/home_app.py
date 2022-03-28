@@ -20,6 +20,7 @@ def app():
                 <li>Service Dashboard - view service-related metrics (e.g. How long does an average haircut take?)</li>
                 <li>Hourly Dashboard - view hourly metrics (e.g. What timeslots are the hottest?)</li>
                 <li>Geospatial Dashboard - view location-related information (e.g. Which outlets perform the best?)</li>
+                <li>Customer Retention Model - determine retainability of a customer (e.g. Will the customer return?)</li>
         <div>
     '''
     st.markdown(home_navigation_guide, unsafe_allow_html=True)

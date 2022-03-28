@@ -7,7 +7,7 @@ def app():
     df = pd.read_csv("./assets/mock_dataset_cleaned.csv")
     
     customer_retention = '''
-        <h1>Customer Retention</h1>
+        <h1>Customer Retention Model</h1>
         <p style="text-align: justify">Based on the data simulated, our team proposed a classification model based on logistic regression to predict if a customer would become a repeat customer based on selected features.
          Randomness had been encoded when generating the class labels, to prevent an entirely deterministic model. This will then serve as a proof of concept that is ready to be utilised with actual data.</p>
         <p style="text-align: justify">Have a go at it! Choose your values for these selected variables to predict if a customer would stay with Snip Avenue.</p>

@@ -27,7 +27,7 @@ streamlit run app.py
 The folders for our dashboard are organised in the following manner.
 
 1. [Apps](./apps) - this is where you can access the different views for our streamlit web dashboard
-2. [Componenets](./components) - this is where we store the code for our data visualisations and common methods
+2. [Components](./components) - this is where we store the code for our data visualisations and common methods
 3. [Assets](./assets) - this is where we store our datasets and images
 4. [notebooks](./notebooks) - this is where our working notebooks are stored (note that the code is very raw as it consists of our workings)
 
